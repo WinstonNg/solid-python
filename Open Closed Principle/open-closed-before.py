@@ -24,8 +24,14 @@ class Order:
             total += self.quantities[i] * self.prices[i]
         return total
 
-class PaymentProcessor():
 
+class PaymentProcessor():
+    '''
+    PaymentProcessor class cannot be extended, it is closed off for further modification.
+
+    eg: What if we want to add a new payment using QR? We would need to modify the class itself
+        This violates the open-closed principle.
+    '''
     def pay_credit(self, order, security_code):
         print("Processing credit payment type")
         print(f"Verifying security code: {security_code}")
