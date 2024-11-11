@@ -25,12 +25,21 @@ class Order:
         return total
 
 class PaymentProcessor(ABC):
-
+    '''
+    Create an abstract base class, which sub-classes can inherit from.
+    '''
     @abstractmethod
     def pay(self, order, security_code):
+        '''
+        Create an abstract method, leave the implementation for sub-classes
+        '''
         pass
 
 class DebitPaymentProcesor(PaymentProcessor):
+    '''
+    Create a debit payment sub-class that inherits from PaymentProcessor abstract class
+    to process debit payment only
+    '''
 
     def pay(self, order, security_code):
         print("Processing debit payment type")
@@ -39,6 +48,10 @@ class DebitPaymentProcesor(PaymentProcessor):
 
 
 class CreditPaymentProcesor(PaymentProcessor):
+    '''
+    Create a credit payment sub-class that inherits from PaymentProcessor abstract class
+    to process credit payment only
+    '''
 
     def pay(self, order, security_code):
         print("Processing credit payment type")
