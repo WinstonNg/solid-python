@@ -58,6 +58,17 @@ class CreditPaymentProcesor(PaymentProcessor):
         print(f"Verifying security code: {security_code}")
         order.status = "paid"
 
+class PaypalPaymentProcessor(PaymentProcessor):
+    '''
+    Create a paypal payment sub-class that inherits from PaymentProcessor abstract class
+    to process paypal payment only
+    '''
+    def pay(self, order, security_code):
+        print("Processing paypal payment type")
+        print(f"Verifying security code: {security_code}")
+        order.status = "paid"
+
+
 order = Order()
 order.add_item("Keyboard", 1, 50)
 order.add_item("SSD", 1, 150)
