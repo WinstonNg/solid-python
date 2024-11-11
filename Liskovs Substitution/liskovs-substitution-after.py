@@ -39,9 +39,6 @@ class PaymentProcessor(ABC):
     Create an abstract base class, which sub-classes can inherit from.
     '''
 
-    def __init__(self, security_code):
-        self.security_code = security_code
-
     @abstractmethod
     def pay(self, order):
         '''
