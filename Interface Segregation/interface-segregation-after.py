@@ -123,4 +123,5 @@ order.add_item("USB cable", 2, 5)
 
 print(order.total_price())
 processor = PaypalPaymentProcessor("monkey@gmail.com")
+processor.auth_sms(465839)
 processor.pay(order)
