@@ -141,6 +141,7 @@ order.add_item("USB cable", 2, 5)
 
 print(order.total_price())
 authorizer = SMSAuth()
+# NotARobot auth can be added, because the classes do not depend on SMSAuth concrete class, but on Authorizer abstract class
 robot_authorizer = NotARobot()
 processor = DebitPaymentProcesor("2345678", authorizer)
 robot_authorizer.not_a_robot()
