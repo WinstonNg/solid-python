@@ -133,7 +133,7 @@ class PaypalPaymentProcessor(PaymentProcessor):
         print(f"Verifying security code: {self.email_address}")
         order.status = "paid"
 
-
+# Create order object
 order = Order()
 order.add_item("Keyboard", 1, 50)
 order.add_item("SSD", 1, 150)
